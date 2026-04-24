@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+set -eu
+
+if command -v readlink >/dev/null 2>&1; then
+  SCRIPT_PATH=$(readlink -f -- "$0" 2>/dev/null || printf '%s\n' "$0")
+else
+  SCRIPT_PATH=$0
+fi
+SCRIPT_DIR=$(CDPATH='' cd -- "$(dirname -- "$SCRIPT_PATH")" && pwd)
+PYTHONPATH="$SCRIPT_DIR${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m ssh_auth "$@"

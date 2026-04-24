@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ssh-auth"
+version = "0.1.0"
+description = "Switch and manage SSH profiles for Codex remote development"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "fourhet66-ctrl" }]
+
+[project.urls]
+Homepage = "https://github.com/fourhet66-ctrl/SSH-Auth"
+Repository = "https://github.com/fourhet66-ctrl/SSH-Auth"
+Issues = "https://github.com/fourhet66-ctrl/SSH-Auth/issues"
+
+[project.scripts]
+ssh-auth = "ssh_auth.cli:main"
+
+[tool.setuptools]
+packages = ["ssh_auth"]

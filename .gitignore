@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+.venv/
+venv/
+env/
+
+build/
+dist/
+*.egg-info/
+
+.DS_Store
+*:Zone.Identifier
+
+# Local Codex/session artifacts should not be published with the project.
+.codex
+
+# Real screenshots may contain hostnames, usernames, or ports.
+test.jpg
+
+# Local smoke-test state.
+.tmp/
