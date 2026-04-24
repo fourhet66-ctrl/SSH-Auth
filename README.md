@@ -2,7 +2,13 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Switch between SSH devboxes for Codex with one stable alias: `codex-active`.
+Codex remote development profile switcher.
+
+ssh-auth lets Codex use one SSH host, codex-active, while you switch the real GPU/devbox behind it.
+
+- Switch GPU servers with `ssh-auth switch 02`
+- Keep Codex pointed at `codex-active`
+- Check SSH status, GPU, and RAM from one table
 
 ![ssh-auth preview](new.png)
 
@@ -10,7 +16,19 @@ Switch between SSH devboxes for Codex with one stable alias: `codex-active`.
 
 ## Quickstart
 
-Install the command globally from this repo:
+Install with one command:
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/fourhet66-ctrl/SSH-Auth/main/install-remote.sh | sh
+```
+
+Or install with `pipx` directly from GitHub:
+
+```shell
+pipx install git+https://github.com/fourhet66-ctrl/SSH-Auth.git
+```
+
+You can also install from a local clone:
 
 ```shell
 git clone https://github.com/fourhet66-ctrl/SSH-Auth.git ~/SSH-Auth

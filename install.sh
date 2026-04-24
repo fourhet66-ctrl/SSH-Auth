@@ -7,6 +7,12 @@ TARGET_DIR="${HOME}/.local/bin"
 TARGET="${TARGET_DIR}/${APP_NAME}"
 PATH_LINE="export PATH=\"\$HOME/.local/bin:\$PATH\""
 
+if [ ! -x "${SCRIPT_DIR}/${APP_NAME}" ]; then
+  printf 'error: expected executable %s next to install.sh\n' "${SCRIPT_DIR}/${APP_NAME}" >&2
+  printf 'For remote installation, use install-remote.sh instead.\n' >&2
+  exit 1
+fi
+
 mkdir -p "$TARGET_DIR"
 ln -sf "${SCRIPT_DIR}/${APP_NAME}" "$TARGET"
 

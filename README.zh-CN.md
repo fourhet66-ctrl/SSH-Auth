@@ -2,7 +2,13 @@
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-用一个稳定别名 `codex-active`，在 Codex 里快速切换不同 SSH devbox。
+给 Codex 用的 SSH 服务器切换器 / Codex remote development profile switcher。
+
+`ssh-auth` 让 Codex 只连接一个 SSH Host：`codex-active`，你可以在它背后切换真正的 GPU 服务器或 devbox。
+
+- 用 `ssh-auth switch 02` 切换 GPU 服务器
+- 让 Codex 始终指向 `codex-active`
+- 在一张表里查看 SSH 状态、GPU 和 RAM
 
 ![ssh-auth 预览](new.png)
 
@@ -10,7 +16,19 @@
 
 ## 快速开始
 
-从仓库安装全局命令：
+一条命令安装：
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/fourhet66-ctrl/SSH-Auth/main/install-remote.sh | sh
+```
+
+也可以直接用 `pipx` 从 GitHub 安装：
+
+```shell
+pipx install git+https://github.com/fourhet66-ctrl/SSH-Auth.git
+```
+
+或者从本地 clone 安装：
 
 ```shell
 git clone https://github.com/fourhet66-ctrl/SSH-Auth.git ~/SSH-Auth
